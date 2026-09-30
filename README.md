@@ -1,40 +1,48 @@
-# 🌍 TerraSync — Digital Land Acquisition Information & Grievance Portal
+# Land Acquisition Management Portal — Working Backend
 
-A unified, role-based portal that brings land acquisition information, compensation details, notices, and grievance tracking into one transparent platform.
+Spring Boot + Java 24 + PostgreSQL + Flyway + Spring Security + JWT + Swagger.
 
-**SISTec Innovation Hackathon 2026** · Problem ID: DT-2 · Theme: Digital Transformations · Team: TerraSync
+## 1. Start PostgreSQL
+Install Docker Desktop, then from this folder run:
 
-> ⚠️ Hackathon prototype using **mock data only**. Not an official government record system.
+`docker compose up -d`
 
-## Problem
-Landowners affected by infrastructure projects get scattered, delayed information about acquisition, compensation, notices, and grievances across multiple offices.
+Or use an existing PostgreSQL server and set DB_URL, DB_USERNAME and DB_PASSWORD.
 
-## Solution
-One portal where landowners view their parcel, compensation, and notices, and submit and track grievances. Admins manage cases from a basic dashboard.
+## 2. Start backend
+Requires JDK 24 and Maven.
 
-## MVP Modules
-1. Registration / login & profile
-2. Land parcel details & acquisition status
-3. Compensation visibility
-4. Notices & documents access
-5. Grievance submission with reference number & tracking
-6. Basic admin dashboard
+`mvn spring-boot:run`
 
-**Chatbot (extension):** an authenticated assistant that answers questions from the user's own portal data (status, compensation, grievances) and guides grievance filing.
+Swagger: http://localhost:8080/swagger-ui.html
 
-## Tech Stack
-Java 17 · Spring Boot · Spring Data JPA · MySQL · REST APIs with role-based access · Basic responsive frontend
+## Demo accounts
+- Landowner: `priya@demo.com` / `Land@123`
+- Officer: `officer@landportal.demo` / `Officer@123`
+- Admin: `admin@landportal.demo` / `Admin@123`
 
-## Security
-Password hashing · role-based access · minimal data collection · audit-friendly status history
+## Demo case
+Case: LA-2026-00128
+Parcel: MH-PUN-0421
+District: Pune
+Project: Pune Ring Road Project
+Affected area: 1.2 hectares
+Approved compensation: 1850000
+Payment reference: TXN-2026-847234
 
-## Team
-| Name              | Role                        |
-|------             |------                       |
-|Atharv Raghuwanshi | Team Lead and AI Integration|
-|Anadi Swarnkar     | Frontend Developer          |
-|Aryan Nayak        | Backend  Developer          |
-|Akshat Malviya     | UI/UX and Database Designer |
+## API flow
+1. POST /api/auth/login
+2. Copy the JWT.
+3. In Swagger click Authorize and enter: `Bearer YOUR_TOKEN`
+4. Use role-specific endpoints.
 
-## References
-[DILRMP](https://dolr.gov.in/) · [LARR Act 2013](https://www.indiacode.nic.in/) · [CPGRAMS](https://pgportal.gov.in/) · [World Bank Land Governance](https://www.worldbank.org/en/topic/land)
+## Main APIs
+Auth: POST /api/auth/register, POST /api/auth/login
+Profile: GET /api/profile
+Landowner: GET /api/parcels, GET /api/cases, GET /api/cases/{id}/timeline, compensation, payments, hearings, documents
+Grievances: POST /api/grievances/case/{caseId}, GET /api/grievances
+Officer: /api/officer/**
+Admin: /api/admin/**
+
+## Important
+This is a hackathon/college MVP. It demonstrates authentication, RBAC, object-level landowner checks, officer district checks, acquisition workflow, compensation, payments, documents metadata, hearings, grievances, notifications, audit logging and Flyway migrations. It is not a production government deployment and has no real banking or government-record integration.

@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: land-acquisition-postgres
+    environment:
+      POSTGRES_DB: land_acquisition
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - land_pgdata:/var/lib/postgresql/data
+volumes:
+  land_pgdata:
