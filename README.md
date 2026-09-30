@@ -42,8 +42,8 @@ Password hashing · role-based access · minimal data collection · audit-friend
 | Name              | Role                        |
 |------             |------                       |
 |Atharv Raghuwanshi | Team Lead and AI Integration|
-|Anadi Swarnkar     | Frontend Devloper           |
-|Aryan Nayak        | Backend Devloper            |
+|Anadi Swarnkar     | Frontend Developer          |
+|Aryan Nayak        | Backend  Developer          |
 |Akshat Malviya     | UI/UX and Database Designer |
 
 ## References
