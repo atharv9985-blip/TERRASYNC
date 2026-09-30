@@ -35,7 +35,7 @@ Password hashing · role-based access · minimal data collection · audit-friend
 |Atharv Raghuwanshi | Team Lead and AI Integration|
 |Anadi Swarnkar     | Frontend Developer          |
 |Aryan Nayak        | Backend  Developer          |
-|Devanshi Rawat     | UI/UX and Database Designer |
+|Akshat Malviya     | UI/UX and Database Designer |
 
 ## References
 [DILRMP](https://dolr.gov.in/) · [LARR Act 2013](https://www.indiacode.nic.in/) · [CPGRAMS](https://pgportal.gov.in/) · [World Bank Land Governance](https://www.worldbank.org/en/topic/land)
