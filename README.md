@@ -25,16 +25,6 @@ One portal where landowners view their parcel, compensation, and notices, and su
 ## Tech Stack
 Java 17 · Spring Boot · Spring Data JPA · MySQL · REST APIs with role-based access · Basic responsive frontend
 
-## Run Locally
-```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-# create a MySQL database named "terrasync" and set credentials in
-# src/main/resources/application.properties
-./mvnw spring-boot:run
-```
-App runs at `http://localhost:8080`.
-
 ## Security
 Password hashing · role-based access · minimal data collection · audit-friendly status history
 
