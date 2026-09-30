@@ -1,0 +1,1 @@
+package com.landportal.repository; import com.landportal.entity.*; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface OwnershipRepository extends JpaRepository<Ownership,Long>{List<Ownership> findByUserId(Long id); List<Ownership> findByParcelId(Long id); boolean existsByUserIdAndParcelId(Long u,Long p);}

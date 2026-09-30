@@ -1,0 +1,1 @@
+package com.landportal.repository; import com.landportal.entity.*; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface AcquisitionEventRepository extends JpaRepository<AcquisitionEvent,Long>{List<AcquisitionEvent> findByAcquisitionCaseIdOrderByEventTimeAsc(Long id);}

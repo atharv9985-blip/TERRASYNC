@@ -1,0 +1,3 @@
+package com.landportal.entity;
+import jakarta.persistence.*;
+@Entity @Table(name="ownerships",uniqueConstraints=@UniqueConstraint(columnNames={"user_id","parcel_id"})) public class Ownership { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) Long id; @ManyToOne(optional=false) User user; @ManyToOne(optional=false) Parcel parcel; double ownershipPercentage; public Long getId(){return id;} public User getUser(){return user;} public void setUser(User v){user=v;} public Parcel getParcel(){return parcel;} public void setParcel(Parcel v){parcel=v;} public double getOwnershipPercentage(){return ownershipPercentage;} public void setOwnershipPercentage(double v){ownershipPercentage=v;} }

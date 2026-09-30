@@ -1,0 +1,1 @@
+package com.landportal.repository; import com.landportal.entity.*; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface CompensationRepository extends JpaRepository<Compensation,Long>{Optional<Compensation> findByAcquisitionCaseId(Long id);}
